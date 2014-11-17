@@ -1,4 +1,4 @@
-package Cons.asg9;
+package cons.asg9;
 
 public class Event implements Comparable<Event> {
     private int schedtime;

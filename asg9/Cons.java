@@ -1,4 +1,4 @@
-package Cons.asg9;
+package cons.asg9;
 
 /**
  * this class Cons implements a Lisp-like Cons cell
@@ -15,7 +15,7 @@ import java.util.PriorityQueue;
 import java.util.Random;
 
 
-//import org.jfugue.*;  // ***** Uncomment to use jFugue
+import org.jfugue.*;  // ***** Uncomment to use jFugue
 
 interface Functor { Object fn(Object x); }
 
@@ -721,19 +721,19 @@ public static void emitp(int voice, String note, int time, int d) {
                                mymem.call(vals[i]));
         System.out.println("Number of function calls = " + fcount);
 
-        //	Player player = new Player();
+        Player player = new Player();
 
         PriorityQueue pqa = initpq((Cons) reader("(seq (boom 4) (bell 4))"));
         simulator(pqa);
         String stra = mstring(0);
         System.out.println(stra);
-        //	player.play(new Pattern(stra));
+        player.play(new Pattern(stra));
 
         PriorityQueue pqb = initpq((Cons) reader("(repeat 2 (seq (boom 4) (bell 4)))"));
         simulator(pqb);
         String strb = mstring(0);
         System.out.println(strb);
-        //	player.play(new Pattern(strb));
+        player.play(new Pattern(strb));
 
         PriorityQueue pqc =
             initpq((Cons)
@@ -741,7 +741,7 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqc);
         String strc = mstring(0);
         System.out.println(strc);
-        //	player.play(new Pattern(strc));
+        player.play(new Pattern(strc));
 
         PriorityQueue pqd =
             initpq((Cons)
@@ -749,13 +749,13 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqd);
         String strd = mstring(0);
         System.out.println(strd);
-        //	player.play(new Pattern(strd));
+        player.play(new Pattern(strd));
 
-	PriorityQueue pqe = initpq((Cons) reader("(seq (piano 0 E5 1) (piano 0 A5 1) (piano 0 C6 1) (piano 0 B5 1) (piano 0 E5 1) (piano 0 B5 1) (piano 0 D6 1) (piano 0 C6 2) (piano 0 E6 2) (piano 0 G#5 2) (piano 0 E6 2) (piano 0 A5 1) (piano 0 E5 1) (piano 0 A5 1) (piano 0 C6 1) (piano 0 B5 1) (piano 0 E5 1) (piano 0 B5 1) (piano 0 D6 1) (piano 0 C6 2) (piano 0 A5 2) (rest 2))"));
+        PriorityQueue pqe = initpq((Cons) reader("(seq (piano 0 E5 1) (piano 0 A5 1) (piano 0 C6 1) (piano 0 B5 1) (piano 0 E5 1) (piano 0 B5 1) (piano 0 D6 1) (piano 0 C6 2) (piano 0 E6 2) (piano 0 G#5 2) (piano 0 E6 2) (piano 0 A5 1) (piano 0 E5 1) (piano 0 A5 1) (piano 0 C6 1) (piano 0 B5 1) (piano 0 E5 1) (piano 0 B5 1) (piano 0 D6 1) (piano 0 C6 2) (piano 0 A5 2) (rest 2))"));
         simulator(pqe);
         String stre = mstring(0);
         System.out.println(stre);
-        //	player.play(new Pattern(stre));
+        player.play(new Pattern(stre));
 
         PriorityQueue pqf =
             initpq((Cons)
@@ -764,9 +764,9 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqf);
         String strf = mstring(0);
         System.out.println(strf);
-        //	player.play(new Pattern(strf));
+        player.play(new Pattern(strf));
 
-	Cons rhyth = readlist( list (
+      	Cons rhyth = readlist( list (
 	     "(seq (boom 2) (rest 4) (kaboom 4) (rest 6) (boom 2) (rest 4) (kaboom 4) (boom 2) (rest 4))",
 	     "(seq (rest 4) (snare 2) (repeat 3 (seq (rest 6) (snare 2))) (rest 2))",
 	     "(repeat 16 (seq (hat 1) (rest 1)))",
@@ -776,7 +776,7 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqh);
         String strh = mstring(0);
         System.out.println(strh);
-        //	player.play(new Pattern(strh));
+        player.play(new Pattern(strh));
 
         Cons melody = (Cons) reader("(seq (repeat 2 (seq (piano ?i C5 4) (piano ?i D5 4) (piano ?i E5 4) (piano ?i C5 4)))     (repeat 2 (seq (piano ?i E5 4) (piano ?i F5 4) (piano ?i G5 8)))     (repeat 2 (seq (piano ?i G5 2) (piano ?i A5 2) (piano ?i G5 2) (piano ?i F5 2) (piano ?i E5 4) (piano ?i C5 4)))     (repeat 2 (seq (piano ?i C5 4) (piano ?i G4 4) (piano ?i C5 8))))");
         PriorityQueue pqi = initpq((Cons) subst( Integer.valueOf(0),
@@ -784,7 +784,7 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqi);
         String stri = mstring(0);
         System.out.println(stri);
-        //	player.play(new Pattern(stri));
+        player.play(new Pattern(stri));
 
         System.out.println("Total time of melody = "
                            + (Integer)totaltime(melody));
@@ -794,7 +794,7 @@ public static void emitp(int voice, String note, int time, int d) {
         String strj = mstring(0);
         System.out.println(strj);
         
-	//     player.play(new Pattern(strj));
+        player.play(new Pattern(strj));
 
         // "The Entertainer" by Scott Joplin
         // Available by public domain
@@ -892,7 +892,8 @@ public static void emitp(int voice, String note, int time, int d) {
         simulator(pqk);
         String strk = mstring(240);
         System.out.println(strk);
-        //	player.play(new Pattern(strk));
+        player.play(new Pattern(strk));
+
 
 	System.exit(0); // If using Java 1.4 or lower
 

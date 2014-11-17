@@ -1,9 +1,10 @@
-package Cons.asg9;
+package cons.asg9;
 
 import java.util.HashMap;
+
 public class Memoizer {
-	Functor f;
-	HashMap<Object, Object> map;
+	private Functor f;
+	private HashMap<Object, Object> map;
 
 	public Memoizer(Functor f1) {
 		f = f1;
